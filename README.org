@@ -9,6 +9,12 @@
 #+EXCLUDE_TAGS: noexport
 #+CREATOR: Emacs 24.4.1 (Org mode 8.2.5h)
 # 
+#+OPTIONS: texht:t
+#+DATE: \today
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS:
+#+LATEX_HEADER:
+#+LATEX_HEADER_EXTRA:\usepackage{fullpage}
 
 * Introduccion
    1. Quien soy
