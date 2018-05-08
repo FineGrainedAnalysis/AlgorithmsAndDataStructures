@@ -479,9 +479,6 @@
 	  - DFUDS
 
 * Diccionarios: Busqueda secuencial/binaria, ABB
-      0. Discussion
-	 - Control 1
-	 - Encuestas Docentes (?)
       1. TDA(s) Diccionario 
 	 1) TDA Diccionario Estatico
 	    - compile(conjunto de pares)
