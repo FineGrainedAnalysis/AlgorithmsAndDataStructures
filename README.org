@@ -1,2 +1,685 @@
-# AlgorithmsAndDataStructures
-Course Notes in Python for a course on Algorithms and Data Structures
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t c:nil creator:comment d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t timestamp:t toc:t todo:t |:t
+#+TITLE: Algorithms and Data Structures
+#+AUTHOR: Jérémy Barbay
+#+EMAIL: jeremy@barbay.cl
+#+DESCRIPTION: Course Notes in Python for a course on Algorithms and Data Structures
+#+KEYWORDS: Algorithms, Data Structures
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 24.4.1 (Org mode 8.2.5h)
+# 
+
+* Introduccion
+   1. Quien soy
+      + Formacion en
+	- Matematica y
+	- Informatica
+      + Investigacion en
+	- Teoria de la Computacion (Analisis de Algoritmos y Estructuras de Datos)
+	- Pedagogia (http://teachingislearning.cl)
+	- (un poco) hactivismo (Aaron Swartz day)
+   2. Quienes son
+      - Mayoridad plan comun
+      - no todos futuros "computines"
+   3. El curso
+      + Objetivo: Aprender a formalizar problema, soluciones, medidas para comparar las soluciones (para la computacion, pero tambien para muchos otros temas, desde los procesos industriales hasta las tareas de la vida)
+      + Componente
+	- teorico (clases magistrales, controles, examen) con
+	- conneccion a la practica (5 tareas en java)
+      + Modalidades:
+	- Evaluacion
+	  * 5 tareas (primera [2018-03-16 Fri])
+	  * 2 controles
+	  * 1 examen final
+	- Clases
+	  * Charla interactivas los Martes y Jueves
+	  * Clases de ejercicios los Viernes
+	- Online
+	  * publicacion de
+	    - apuntes "vivas" en Material Docente
+	    - plan de cursos (Corto) en Blog
+	  * Uso intenso del foro:
+	    - los alumnos tienen que responder a las preguntas de los (otros) alumnos,
+	    - el rol del equipo docente es de verificar la validad de las respuestas.
+
+* Desde la electronica a la programacion a los algoritmos
+   1) Que hay en un computador
+      - CPU
+      - ALU
+      - Memoria
+      - Perifericos
+   2) Que hace un programa
+      - Secuencia 
+	- Instrucciones
+	  - Input (read)
+	  - Output (write)
+	  - Flow (if, then, else, while, until,...)
+      - Librarias
+   3) Que hace un algoritmo?
+      - trabajo preliminario antes de programar
+      - trabajo en comun entre la programacion en multiples plateformas
+      - tener un languaje sobre *los programas que no pueden existir*
+* Introduccion a Teoria de la Computacion
+   1. Arquitectura del Computador
+      1) CPU 
+      2) Memoria
+      3) Punteros
+      4) Variables de Referencia
+   2. Herramientas: <<<Estructuras de Datos>>> (Concreto)
+      1) Martillo (de metal)
+      2) tornillador (cruciforme)
+      3) Arreglo
+      4) Punteros y Variables de Referencia
+   3. Applicaciones: <<<Tipos de Datos Abstractos>>> (Abstraccion)
+      1) Martillar (concepto)
+      2) tornillar (concepto)
+      3) Conjunto 
+	 - [ ] encuentra(clave)
+	 - [ ] tamano()
+	 - [ ] agrega(clave) (para conjunto dinamico)
+	 - [ ] borra(clave) (para conjunto dinamico)
+	 - [ ] encuentraMinimo() (para "cola de prioridad minima")
+	 - [ ] encuentraMaximo() (para "cola de prioridad maxima")
+	 - [ ] borraMinimo() (para "cola de prioridad minima")
+	 - [ ] borraMaximo() (para "cola de prioridad maxima")
+      4) Diccionario
+	 - [ ] encuentra(clave) -> dato
+	 - [ ] tamano()
+	 - [ ] agrega(clave,dato) (para diccionarios dinamicos)
+	 - [ ] borra(clave) (para diccionarios dinamicos)
+	 - [ ] encuentraProximo(clave) (para diccionarios ordenados)
+	 - [ ] encuentraPrevio(clave) (para diccionarios ordenados)
+** CANC Programas Iterativos usando invariante
+    http://users.dcc.uchile.cl/~bebustos/apuntes/cc3001/Repaso/
+    1. Introduccion
+       1) Que vimos la otra vez?
+       2) Apuntes en linea
+	  - http://users.dcc.uchile.cl/~bebustos/apuntes/cc3001/
+	  - https://www.u-cursos.cl/ingenieria/2016/2/CC3001/2/enlaces/
+    2. Syntaxis Java
+       - Variables
+       - Constantes
+       - Instrucciones
+       - Salida
+       - Condicionales
+       - Loops
+    3. Ejemplos
+       - Ordenar por insercion
+       - Ordenar por seleccion
+       - Ordenar por burbuja
+       - Calculo de x^n (mas sobre eso en recurrencias)
+    4. Conceptos de Programacion
+       - iterativo (Assembler, Basic)
+       - Orientada a Objetos (Java, python)
+       - Funcionales (ML, Caml, python)
+* Algoritmos simples de ordenacion
+    1. Problema de Ordenacion:
+       1) input
+       2) output
+       3) applicaciones
+    2. Algoritmos de Ordenacion 
+       1) Ordenar por insercion
+       2) Ordenar por seleccion
+       3) Ordenar por burbuja
+    3. Mas alla (OPCIONAL): 
+       1) Analisis por el Peor Caso
+       2) Analisis por el Mejor Caso
+       3) Analisis por el Caso Promedio
+* Medidas de Complejidad
+   1. "el" "Mejor" algorimo
+      1) El mejor algoritmo absoluto no exite
+      2) Comparar de manera absoluta dos algoritmos es poco practico
+   2. Peor/Mejor/Promedio Caso (por n fijo)
+      1) Mejor Caso
+      2) Peor Caso
+      3) Caso Promedio
+   1. Complejidades en el peor caso de Algoritmos de Ordenamiento Basicos
+       1) Ordenar por insercion
+       2) Ordenar por seleccion
+       3) Ordenar por burbuja
+   3. Asimptoticas
+      1) Complejidad en el peor caso por (tamano de input) n fijo define una fonccion
+      2) nos interesa el comportamiento por grandes valores de n
+      3) *no* nos interesa mucho (en primera instancia) los factors constantes
+* Diseno y Analisis de Algoritmos
+    1. Recursividad
+       1) x^n
+       2) torre de Hanoi
+       3) x!
+       4) (OPT) Fibonacci
+    2. Backtracking
+       1) Solucion de Laberinto
+       2) minMax algorithm in game programming (Checkers)
+       3) (OPT) SIMPLEX (optimizacion combinatoria)
+    3. (OPT) Problemas de las $n$ reinas
+       1) Recurrencia
+       2) tiempo
+       3) Espacio
+* Metodos Matematicos
+  1. Notaciones
+     + O
+     + Omega
+     + Theta
+     + o (OPCIONAL)
+     + w (OPCIONAL)
+  2. Ecuaciones de Recurcion 
+     1) (Algunas) Ecuaciones Non Lineales: Teorema Maestro: $T(n) = p T(n/q) + kn$
+	- Desarolla $T(n) = kn + p T(n/q)$
+	  - T(n) = kn \sum_{i\in[0..j-1} (p/q)^i  + p^i T(1/q^i)
+	- Caso $p>q$
+	  - $T(n) \in O(n^{\log_q p})$
+	- Caso $p=q$
+	  - $T(n) \in O(n\lg n)$
+	- Caso $p<q$
+	  - $T(n) \in O(n)$	       
+     2) Ecuaciones Lineales con coeficientes constantes: $f_n = A f_{n-1} + B f_{n-2} + C f_{n-3} + ...$
+	- Soluciones de la forma f_n = \lambda ^n
+	- para encontrar cual:
+	  - $f_n = \lambda ^n$
+	- Ejemplo: resuelve f_n = f_{n-1} + f_{n-2}
+	  - Equivale a resolver $\lambda ^n = \lambda^{n-1} + \lambda ^{n-2}
+	  - divide por $\lambda^{n-2}
+	  - obtiene el polinomo caracteristico
+	  - le resuelve
+	  - usa los casos
+     3) Ecuaciones de primer orden:  $T(n) = a T(n-1) + b_n$
+	- Caso a = 1 : T(n) = T(n-1) + b_n
+	  - Telescopica:
+	  - $T(1) = T(0) + \sum_{i\in[1..n] b_i$
+	- Caso a general
+	  - T(n) = a T(n-1) + b_n
+	    - divide by $1/a_n$
+	  - $T(n) / a_n = T(n-1) / a_{n-1} + b_n / a_n$
+	    - Define T'(n) = T(n) / a_n
+	  - T'(n)  = T'(n-1) + b'_n
+	  - (...)
+	  - T(n) = a^n T(0) + \sum_{i=1^n} b_i a^{n-i}
+	    - Example Hanoi:
+	      - T(n) = 2 T(n-1) + 1
+	      - T(n) = 2^n - 1
+     4) Resolver otras Ecuaciones de recurrencia
+	- Prueba por Induccion
+	- Software: Matlab, Maple
+	- Campo entero de Mathematica:
+	  - "Functional Analysis"
+	  - Fractals
+	  - etc...
+*** Problema: Ecuacion de Stooge-sorting
+* Recursividad y Tabulacion
+   1. Fibonacci
+   2. Programacion Dinamica
+   3. Algoritmos Avaros
+* Dividir para reinar
+    2. Dividir para Reinar
+       1) Basico: binary search
+       2) General: Merge Sort
+       3) Advanced: Optimal Boxes (Satellite imagery)
+    3. Notaciones Asimptoticas en Practica
+       1) Inutiles para diferenciar "Insertion Sort" y "Selection Sort"
+       2) Utiles para diferenciar "Merge Sort" and "Insertion Sort"
+       3) Inutiles (de nuevo) para diferenciar "Merge Sort" y "Heap Sort"
+* Programacion Dinamica
+      1. Repaso:
+	 1) Recurrencias y Teorema Maestro
+	    - Caso $p>q$:  $T(n) \in O(n^{\log_q p})$
+	    - Caso $p=q$:  $T(n) \in O(n\lg n)$
+	    - Caso $p<q$:  $T(n) \in O(n)$
+	 2) Programas Recursivos
+	    - Hanoi
+	    - Fibonacci
+	    - (Edit Distance)
+      2. Programacion Dinamica: resolver problemas de optimizacion (maximizacion o minimizacipn de alguna funcion objetivo)
+	 1) Ejemplo: Multiplicacion de una secuencia de matrices
+	    - A 100x10, B 10x100, C 100x10
+	    - (AB)C = 200.000, A(BC) = 20.000
+	 2) Explosion de solucion ingenuas: 
+	    - los subproblemas se "traslapan" (overlapping problems)
+	    - Tiempo en $4^n / n^{3/2}$
+	    - Pero hay solamente n(n-1)\in O(n^2) problemas distintos!
+	 3) memoization = Uso de memoria
+	    - Espacio en $O(n^2)$
+	    - Tiempo en $O(n^3)$
+      3. Ejemplos de Applicaciones
+	 1) Multiplicacion de secuencia
+	 2) Longest Increasing Subsequence
+	 3) (Edit Distance)
+** CANC Algoritmos Avaros					       :CANC:
+   :LOGBOOK:
+   - State "CANC"       from ""           [2018-04-09 Mon 13:46]
+   :END:
+    1. Algoritmos Avaros ("Greedy Algorithms")
+       - para resolver problemas de optimisacion
+       - busca optimum *local*, simple de programar:
+	 - toma decisiones en base a informacion local
+	 - nunca cambia una decision pasada
+       - no siempre optimal (e.g. cuando algunos optimos locales no son globales)
+       - Ejamplo:
+	 1. camino mas corto
+	 2. assignacion de actividades (ejemplo de las apuntes)
+    2. Estudio de Caso: Subsecuencia de Suma Maxima
+       - Definicion:
+	 - Dados enteros $A_1,\ldots,A_n$
+	 - Encontrar $i,j$ tal que $\sum_{k\in[i..j]} A_k$ es maximo
+       - Ejemplo
+	 - S = -2,11,-4, 13, -5, -2
+	 - Respuesta: 20
+    3. Soluciones
+       1) Fuerza Bruta: $O(n^2)$
+       2) Fuerza Bruta mejorado: $O(n^2)$
+       3) Dividiendo el problema: $O(n\lg n)$
+	  - $T(n)= 2 T(n/2) + O(n)$
+       4) Algoritmo Eficiente: $O(n)$
+* Casos de estudio
+****** Subsecuencia de Suma Maxima
+       - Importancia del orden (arreglo en los slides de Benjamin)
+****** Multiplicacion de dos Matrices
+       - OJO: problema distinto de la optimizacion del calculo del producto de una cadena de matrices
+       - Simple algoritmo: $O(n^3)$
+       - Se puede mejorar?
+	 - no mejor que $O(n^2)$ -> la complejidad del problema es a dentro de $\Omega(n^2)$
+	 - problema abierto por mucho tiempo de mejorar $O(n^3)$ o $\Omega(n^2)$
+	 - en 1960, Strassen mostro como mejorar $O(n^3)$ por dividir y conquistar
+       - $T(N) \in 7T(N/2) + O(N^2)$ -> $T(N) \in O(N^{\log_2(7)}) \subseteq O(N^{2.81})$
+       - Nota:
+	 - Todavia no es abierto el problema de la complejidad
+	 - Algoritmo de Strassen mejor solamente cuando N es muy grande
+	 - El algoritmo es numericamente inestable.
+	 - La multiplicacion de 2 matrices tiene muchas applicaciones sorprendantes (Transforma de Fourier)
+	 - The (simplified) Teorema maestro as previously taught applies to recurrences of the form $T(n) = p T(n/q) + kn$
+	 - Strassen algorithms yields a recurrence in $T(N) \in 7T(N/2) + O(N^2)$
+	 - The result of $O(N^{2.81})$ is still valid by the more general master theorem (e.g. as described on https://en.wikipedia.org/wiki/Master_theorem), for equations of the form $T(n) = p T(n/q) + f(n)$ where $f(n)\in O(n^c)$ where $c<\log_p q$.
+****** LCSS = "Longuest Common Sub Sequence" = "Subsecuencia comun mas larga"
+       :CLOCK:
+       :END:
+       :LOGBOOK:
+       - State "ACTF"       from ""           [2015-10-01 Thu 11:09]
+       :END:
+       1. Contexto:
+	  1) Applicaciones:
+	     - Comparar dos secuencias de ADN o ARN
+	     - Comparar dos tareas submitidas por alumnos
+	  2) En general, es una medida (entre otras) para determinar si dos secuencias son similares:
+	     - si una es una subsecuencia de la otra
+	     - costo de trandormar una en otra (distancia de edicion o "Edit Distance", cf tarea 3)
+	     - encontrar una tercera que se parezca a ambas
+	  3) Definicion:
+	     - Subsecuencia :: la secuencia con cero o mas elementos dejados fuera
+	     - Formalmente:
+	       - Z es subsecuencia de X si existe secuencia de indices creciente de X tal que 
+		 $\Exist (i_1,\ldots,i_{|Z|}), \forall j\in [1..k] z_j = x_{i_j}$
+	     - Subsecuencia comun :: Z es subsecuencia comun de X e Y si es subsecuencia de X y de Y.
+	     - el problema es de encontrar la subsecuencia comun mas grande entre dos secuencias $X$ y $Y$ (de tamaños $n$ y $m$)
+       2. Algoritmos:Cual algoritmo pueden imaginar?
+	  1) Fuerza Bruta 
+	     - Cuantas subsecuencias tiene una secuencia de $n$ elementos? 
+	       - en el peor caso (e.g. sin repeticiones de simbolos)
+	  2) Dividir (por conquistar)  
+	     - Define $X_i = (x_1,\ldots,x_i)$
+	     - Subproblemas: encontrar la subsecuencia mas larga de subfijos
+	     - Theorema ::
+	       - Sea $X_m$ e $Y_n$ secuencias, $Z_k$ una LCS de $X$ e $Y$
+		 * Si $x_m = y_n$,
+		   - $z_k = x_m = y_n$ y $Z_{k-1}$ es una LCS de $X_{m-1}$ e $Y_{n-1}$
+		   - (acordense que los elementos de $Z$ no tienen que ser consecutivos en $X$ o $Y$)
+		 * Si $x_m \neq y_n$,
+		   - $z_k \neq x_m$ implica que $X$ es una LCS de $X_{m-1}$ e $Y_{n}$.
+		   - $z_k \neq y_m$ implica que $X$ es una LCS de $X_{m}$ e $Y_{n-1}$.
+	     - El Teorema suggera una solucion recursiva de grado 2 (dos llamadas recursivas al maximo)
+	     - Matriz $C$ de $m\times n$ entradas, definidas por
+	       - $c[i,j] =$ 
+		 - $0$ si $i=0$ y $j=0$
+		 - $c[i-1,j-1]+1$ si $i,j>0$ y $x_i = y_j$
+		 - $\max\{ c[i,j-1], c[i-1,j] \}$ si $i,j>0$ y $x_i \neq y_j$
+	     - Rendimiento
+	       - tiempo en $O(nm)$
+	       - espacio en $O(n)$
+****** Eso es la fin de la parte sobre paradigmos de programacion
+       - Sigamos en la proxima session con Estructuras de datos!
+
+
+
+
+
+
+
+
+* Estructuras de datos elementales 
+    1. Conjunto(s)
+       1) Conjunto desordenado dinamico
+	  - encuentra(clave)
+	  - tamano()
+	  - agrega(clave) 
+	  - borra(clave)
+       2) Cola de prioridad minima (dinamica)
+	  - encuentra(clave)
+	  - tamano()
+	  - agrega(clave) 
+	  - borra(clave)
+	  - encuentraMinimo()
+	  - borraMinimo()
+    2. Diccionario(s)
+       1) Diccionario statico ordenado 
+	  - encuentra(clave) -> dato
+	  - tamano()
+	  - encuentraProximo(clave) 
+	  - encuentraPrevio(clave) 
+       2) Diccionario dinamico ordenado 
+	  - encuentra(clave) -> dato
+	  - tamano()
+	  - agrega(clave,dato) 
+	  - borra(clave) 
+	  - encuentraProximo(clave) 
+	  - encuentraPrevio(clave) 
+** Ejercicio
+    Cuales son lo tipos de datos abstractos correspondiendo a estas estructuras de datos? (i.e. Cuales problemas pueden resolver estas soluciones?)
+       1. Arreglo desordenado (mas una variable para el tamano)
+	  - agregar
+	  - tamano
+	  - buscar (dificil)
+	  - borrar (una vez encontrado)
+	  - proximoMasGrande(clave) dificil
+	  - encuentra minimo(clave) dificil
+       2. Arreglo ordenado
+       3. Lista Enlazada
+       4. Arbol Binario (de Busqueda)
+       5. Arbol General (de Busqueda)
+
+
+* Listas, Pilas
+   1. Listas (Encadenadas)
+      - Busqueda
+      - Insercion
+      - Delecion
+   2. Pilas 
+      - ADT o DS?
+      - Implementaciones
+	- Listas
+	- Arreglo
+      - Applicaciones
+	- pasaje de parametros a funciones
+   3. Fila 
+      - LIFO, FILO, LILO, FIFO: cuantas posibilidades?
+     
+* Colas, colas de prioridad
+      1. Conceptos
+	 1) Niveles de Abstraccion
+	 2) Typos de Datos Abstractos ("Abstract Data Type" ADT)
+	 3) Data Structure
+      2. Applicaciones
+	 1) Fila (File) 
+	    - ADT: FIFO = First In First Out
+	    - DS: 
+	      - en lista
+	      - en arreglo
+	    - Rendimientos
+	 2) Pilas (stack)
+	    - ADT: LIFO = Last In First Out
+	    - DS: 
+	      - en lista
+	      - en arreglo
+	    - Rendimientos
+	 3) Other ADTs:
+	    - FILO = First In Last Out?
+	    - LILO = Last In Last Out?
+	    - Otros?
+      3. Listas 
+	 1) Descripcion
+	 2) ADT o DS?
+	 3) Variantes
+	    - "Double Linked List"
+	    - Lista de Listas
+	    - Skiplists
+      4. Colas
+	 1. Tipo de Datos Abstractos (TDAs)
+	    - Cola
+	    - Cola de prioridad
+	 2. Estructuras de Datos
+	    - Lista
+	    - Pila
+	    - Cola
+	    - Cola de prioridad
+      5. Cola de Prioridad mas en detalles
+	 - CorrectUp
+	 - CorrectDown
+	 - Heapify
+* arboles binarios, generales
+       1. Definiciones
+	  1) Arboles <<<Ordinales>>>
+	     - Nodos Internos y Externos (Hojas)
+	     - Altura
+	     - Profundidad de un nodo o de una hoja
+	  2) Arboles <<<Cardinales>>> (y Binarios en particular)
+	     - general, o 
+	     - Balanceado, o
+	     - Completo y Quasi completo
+	  3) Applicaciones
+	     - Expressiones de calculo 
+	       - notacion polacka invertida
+	       - Expressiones con parenthesis
+	     - Heaps
+	     - Diccionarios
+	       - Arboles De Busqueda
+	       - Red-Black Arboles,
+	       - (2-3)-Arboles, (k-(2k-1))-Arboles
+	       - B-Arboles
+	     - ...
+       2. Propriedades
+	  1) Cantidad de nodos internos vs cantidad de nodos externos en un arbol binario? 
+	     - e = 1+i
+	  2) Altura de un arbol completo con $n$ nodos, si
+	     - binario?   h = \log_2(n +1 ) -1  \in O(log_2 n)
+	     - (k-ary)?   (homework)
+	     - quasi-completo binario?    $h  = \lceil \log_2(n +1 )\rceil -1  \in O(log_2 n)$
+	     - balanceado?
+       3. Nociones Utiles
+	  - Pre-orden
+	  - In-Orden (binario)
+	  - Post-Orden
+	  - DFUDS
+
+* Diccionarios: Busqueda secuencial/binaria, ABB
+      0. Discussion
+	 - Control 1
+	 - Encuestas Docentes (?)
+      1. TDA(s) Diccionario 
+	 1) TDA Diccionario Estatico
+	    - compile(conjunto de pares)
+	    - find(key)
+	 2) TDA Diccionario Dinamico
+	    - isEmpty()
+	    - add(key,data)
+	    - remove(key,data)
+	    - find(key)
+	 3) TDA Diccionario (Dinamico) Ordenado
+	    - [X] isEmpty()
+	    - [X] add(key,data)
+	    - [X] remove(key)
+	    - [X] find(key)
+	    - [X] findNext(key)
+	    - [ ] rank(key)
+	    - [ ] select(rank)
+      2. Tecnicas para Diccionario
+	 1) Arreglo desordenado
+	    - Busqueda Secuencial
+	    - moveToFront
+	 2) Arreglo ordenado
+	    - Busqueda Secuencial
+	    - Busqueda Binaria
+	    - Busqueda Doblada
+	    - Otras Busquedas
+	 3) Arbol Binario de Busqueda
+	    - Busqueda en arbol de busqueda
+* Arboles de Busqueda General y 2-3
+      1) TDA Diccionario (Dinamico) Ordenado
+	 - [X] isEmpty()
+	 - [ ] add(key,data)
+	 - [ ] remove(key)
+	 - [X] find(key)
+	 - [X] findNext(key)
+      2) Estructuras de Datos para Diccionario :AVL ((Georgy Adelson-Velsky and Evgenii Landis' tree, 1962)
+	 - [ ] isEmpty()
+	 - [ ] add(key,data)
+	 - [ ] remove(key)
+	 - [ ] find(key)
+	 - [ ] findNext(key)
+      3) (2,3)-Arboles
+	 1) [ ] find(key)    $3h \in O(h)$
+	 2) [ ] findNext(key) $O(h)$
+	 3) [ ] add(key,data) $O(h)$
+	 4) [ ] remove(key) $O(h)$
+      4) Combinatoria   
+* Arboles 2-3, AVL, arboles digitales
+
+      3. (d,2d-1)-Arboles 
+	 1) [ ] find(key)
+	 2) [ ] add(key,data)
+	 3) [ ] remove(key)
+	 4) [ ] findNext(key)
+      4. Finger Search Trees
+	 1) [ ] find(key)
+	 2) [ ] add(key,data)
+	 3) [ ] remove(key)
+	 4) [ ] findNext(key)
+
+* B-Arboles
+* ABB optimo, Splay trees
+      1. [X] "Move To Front" en Arreglos Ordenados
+	 1) Definicion de distribucion
+	 2) Promedio sobre input
+	 3) vantajas sobre analisis en el peor caso 
+      2. [ ] Arboles de Busqueda Binarios Optimos (ABB optimos)
+	 1) Definicion
+	 2) Computacion (Programacion Dinamica!)
+	 3) Analisis: $O(n^3)$, $O(n^2)$
+      3. [ ] Splay Trees (AVLs que cambian tambien cuando se busca)
+	 1) Motivacion
+	 2) Definicion
+	 3) Analisis: logros y problemas abiertos
+* Skip Lists
+      1. Algoritmos y Estructuras de Datos aleatorizados
+	 1. Algoritmos y Estructuras de Datos deterministicos
+	 2. Instrucciones aleatorizadas
+	 3. Analisis: Peor caso vs Promedio
+	    1) [ ] sobre instancias
+	    2) [X] sobre aleatorizacion
+      2. SkipLists: diseño
+	 1) [X] Listas enlazadas
+	 2) [X] Resumen exacto de Listas enlazadas
+	 3) [X] Resumen aproximado de listas enlazadas
+      3. Skiplists: analisis
+	 1) tiempo de busqueda
+	 2) tiempo de inserción
+	 3) tiempo de deleción
+* Arboles de busqueda digital
+* Bitmaps, hashing 
+
+      1. Valores y Comparaciones
+	 1) Algoritmos en el modelo de comparaciones (e.g. busqueda binaria)
+	 2) Algoritmos afuera del modelo de comparaciones (e.g. busqueda por interpolacion)
+	 3) Frecuencia de colisiones: Paradojo de los cumpleanos 
+
+      2. Tablas de Hash
+	 1) [ ] Encadenamiento
+	    - Listas enlazadas en cada cedula
+	    - Hashing con listas mezcladas
+	 2) [ ] Direccionamiento abierto ("Open directing" but "closed table")
+	    - Linear Probing
+	    - Quadratic Probing
+	    - Hashing con doble funcion de hash
+
+      3. Detalles tecnicos
+	 1) Borrar
+	 2) Funciones de Hash
+	    - Suma de caracteres
+	    - funcion de hash aleatorizada h_{a,b}(k)= ak + b mod p mod N 
+	 3) Analisis amortizada
+
+* Ordenamiento: cota inferior
+
+      1. Busqueda Desordenada
+      2. Busqueda Ordenada
+      3. Ordenamiento
+
+* Quickselect, heapsort
+
+      1. Heap Sort
+
+	 1) Review Priority Queues and Dictionaries
+	 2) Using Priority Queues for Sorting (Heapify)
+	 3) Using Dictionaries for Sorting
+
+      2. Quick Sort
+
+	 1) Partitioning an array by a pivot
+	    - linear time median
+	 2) Divide and Conquer Sorting no 2
+	 3) Detecting very frequent elements
+
+      3. Quick Select
+
+	 1) Definitions
+	    - Rank
+	    - Select
+	 2) Select Algorithms
+	    - $O(n\lg n)$
+	    - $O(n)$
+	 3) Lazy Data Structures for Rank and Select Queries (Online)
+
+* Radix sort
+      1. Counting Sort
+	 - Value Based Sorting algorithms: (relatively) small domain
+	 - Complexity in funciton of $n$ and $\sigma$
+      2. Hash Sort?
+	 - large domain but Small effective domain
+      3. Radix Sort
+* Grafos: Representacion, DFS y BFS
+      - Grafos
+	- ADT
+	- DS
+	  - Matrix
+	  - Listas
+	  - Otras
+	- Applicaciones
+* Distancias minimas (Dijkstra, Floyd, cerradura transitiva)
+   - https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
+   - https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm
+* Arbol cobertor minimo (Kruskal, Prim)
+    - https://en.wikipedia.org/wiki/Kruskal's_algorithm
+    - https://en.wikipedia.org/wiki/Prim's_algorithm
+
+* Busqueda en texto: String Matching (Fuerza bruta, KMP, Boyer-Moore)
+     1. Pattern Matching: Definition and Brute Force Algorithm
+	- Definition
+	- Brute Force
+	- Improvements
+	  + Indexing the Pattern (explored in this lecture)
+	  + Indexing the text (current research)
+	  + Indexing both
+     2. Knuth-Morris-Pratt (KMP) Algorithm
+	- Knuth:
+	  - Father of Theoretical Computer Science
+	  - Original Programmer of TeX
+	  - Author of "The Art of Computer Programming", a reference in the field
+	- Ideas:
+	  - Failure function
+	- Complexity:
+	  - O(n+m) in worst and best case.
+     3. Boyer-Moore-Horspool (BMH) Algorithm
+	- Ideas:
+	  - Right to Left
+	  - Simplified Failure function
+	- Complexity
+	  - O(nm) in worst case
+	  - O(n/m) in best case and "on average"
+     4. Beyond the course
+	1. Combination of KMP with BMH: BMS 
+	   - O(n+m) in worst case
+	   - O(n/m) in best case and "on average"
+	   - \Omega(n/m) lower bound anyway
+	2. Automata (Extra)
+	   - Completely indexing the pattern
+	   - O(n+m^2) worst case
+	3. Pattern Matching with Partial MisMatch
+
+
